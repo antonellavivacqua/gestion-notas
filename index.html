@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- para que se vea bien en celular -->
+    <title>SGE - Sistema de Gestión de Notas | Panel Directivo</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-container" class="login-page">
+        <div class="login-box">
+            <div class="login-header">
+                <i class='bx bxs-school logo-icon'></i>
+                <h1>SGN</h1>
+                <p>Sistema de Gestión de Notas</p>
+            </div>
+            <div class="login-body">
+                <h2>Acceso Directivos</h2>
+                <div class="input-group">
+                    <i class='bx bx-user'></i>
+                    <input type="email" id="email" placeholder="usuario@bue.edu.ar" required>
+                </div>
+                <div class="input-group">
+                    <i class='bx bx-lock-alt' ></i>
+                    <input type="password" id="password" placeholder="Contraseña" required>
+                </div>
+                <button class="btn-primary" onclick="login()">
+                    Ingresar <i class='bx bx-right-arrow-alt'></i>
+                </button>
+                <p id="error-msg" class="error-text"></p>
+            </div>
+            <div class="login-footer">
+                <p>© 2024 Institución Educativa. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="main-dashboard" class="dashboard-layout" style="display:none;">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class='bx bxs-school'></i>
+                <span>SGE Panel</span>
+            </div>
+            <nav class="sidebar-menu">
+                <ul>
+                    <li class="active"><a href="#"><i class='bx bxs-dashboard'></i> Inicio</a></li>
+                    <li><a href="#"><i class='bx bxs-user-detail'></i> Alumnos</a></li>
+                    <li><a href="#"><i class='bx bxs-book-content'></i> Reportes</a></li>
+                    <li><a href="#"><i class='bx bxs-cog'></i> Configuración</a></li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button class="btn-logout" onclick="logout()">
+                    <i class='bx bx-log-out'></i> Cerrar Sesión
+                </button>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <p>Bienvenido,</p>
+                    <h1>Director/a</h1>
+                </div>
+                <div class="header-actions">
+                    <span class="date">Octubre 26, 2026</span> // ACTUALIZAR A DATE TIME
+                    <div class="profile-pic">D</div>
+                </div>
+            </header>
+
+            <section class="search-section">
+                <div class="search-bar-container">
+                    <i class='bx bx-search search-icon'></i>
+                    <input type="text" id="search-dni" placeholder="Ingrese DNI del alumno para buscar..." onkeyup="buscarAlumnoDinamico()">
+                </div>
+                
+                <div id="search-results-container" class="results-hidden">
+                    </div>
+            </section>
+
+            <section id="student-detail-section" class="student-detail-container" style="display: none;">
+                </section>
+
+            <section id="dashboard-summary" class="summary-section">
+                <h2>Resumen Institucional</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class='bx bxs-user-check active-icon'></i>
+                        <div class="stat-info">
+                            <h3>1,250</h3>
+                            <p>Alumnos Activos</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bxs-error-circle warning-icon'></i>
+                        <div class="stat-info">
+                            <h3>45 hay que hacer sum</h3>
+                            <p>Con Materias Adeudadas</p>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class='bx bxs-file-pdf pdf-icon'></i>
+                        <div class="stat-info">
+                            <h3>Boletines</h3>
+                            <p>Ciclo Lectivo 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
