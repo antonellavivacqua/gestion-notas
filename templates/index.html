@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema de Calificaciones</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>Sistema de Gestión de Calificaciones</h1>
+
+</header>
+
+<div class="container">
+
+    <aside id="cursos" class="panel">
+
+        <h2>Cursos</h2>
+
+    </aside>
+
+    <aside id="alumnos" class="panel">
+
+        <h2>Seleccione un curso</h2>
+
+    </aside>
+
+    <main id="detalle" class="panel">
+
+        
+
+    </main>
+
+</div>
+
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+
+</html>
